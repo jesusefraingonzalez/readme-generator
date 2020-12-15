@@ -59,6 +59,10 @@ const questions = [
 
 // function to write README file
 function writeToFile(fileName, data) {
+    fs.writeFile(fileName , generateMarkdown(data), error => {
+        if (error) throw error;
+        else console.log("Success!");
+    })
 }
 
 // function to initialize program

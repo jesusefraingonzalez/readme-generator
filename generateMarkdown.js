@@ -24,14 +24,9 @@ function generateMarkdown(data) {
   ## Tests
   ${data.tests}
   ## Questions
-  [Github](github.com/${data.github})
-  ${data.email}
+  **Github:** [${data.github}](https://github.com/${data.github})
   
-  ## Link
-  [Link to Live Website](https://jesusefraingonzalez.github.io/repo-name)
-  
-  ## ScreenShots
-  ![Caption](link/to/image.png)
+  Contact me at ${data.email} with any additional questions. 
   
 `;
 }

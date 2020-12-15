@@ -38,9 +38,19 @@ const questions = [
     },
     {
         type: "input",
+        name: "contributing",
+        message: "contribution"
+    },
+    {
+        type: "input",
+        name: "tests",
+        message: "tests"
+    },
+    {
+        type: "input",
         name: "email",
         message: "What is your email?"
-    }
+    },
 ];
 
 // function to write README file

@@ -2,8 +2,8 @@
 function generateMarkdown(data) {
   return `# ${data.title}
 
-  ## Introduction
-  ${data.intro}
+  ## Description
+  ${data.description}
   
   ## Table of Contents
   1. [Installation](#Installation)
@@ -14,17 +14,17 @@ function generateMarkdown(data) {
   6. [Contact Information](#Questions)
   
   ## Installation
-
+  ${data.installation}
   ## Usage
-  
+  ${data.usage}
   ## License
-
+  ${data.license}
   ## Contributing
-
+  ${data.contributing}
   ## Tests
-
+  ${data.tests}
   ## Questions
-  ${data.username}
+  [Github](github.com/${data.github})
   ${data.email}
   
   ## Link

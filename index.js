@@ -1,6 +1,7 @@
 // dependencies
 const inq = require('inquirer');
 const fs = require('fs');
+const generateMarkdown = require('./generateMarkdown.js');
 
 // array of questions for user
 //title, description, installation, usage, license, contributing, tests, questions 
@@ -67,7 +68,7 @@ function writeToFile(fileName, data) {
 
 // function to initialize program
 function init() {
-
+    writeToFile('README.md' , questions);
 }
 
 // function call to initialize program

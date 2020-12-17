@@ -9,49 +9,49 @@ const questions = [
     {
         type: "input",
         name: "title",
-        message: "What is the name of your project?"
+        message: "Please enter your project name: "
     },
     {
         type: "input",
         name: "description",
-        message: "Please type a brief description of your project"
+        message: "Please enter a brief description of your project: "
     },
     {
         type: "input",
         name: "installation",
-        message: "Please give a description on how to install your project"
+        message: "Please enter installation instructions for your project: " 
     },
     {
         type: "input",
         name: "usage",
-        message: "How will your project be used?"
-    },
-    {
-        type: "list",
-        name: "license",
-        message: "What license do you wish to use?",
-        choices: ["MIT", ""]
-    },
-    {
-        type: "input",
-        name: "github",
-        message: "What is your github username?"
+        message: "Please enter project usage instructions: "
     },
     {
         type: "input",
         name: "contributing",
-        message: "contribution"
+        message: "Please enter contribution information: "
     },
     {
         type: "input",
         name: "tests",
-        message: "tests"
+        message: "Please enter testing information: "
+    },
+    {
+        type: "input",
+        name: "github",
+        message: "Please enter your github username: "
     },
     {
         type: "input",
         name: "email",
-        message: "What is your email?"
+        message: "Please enter your email: "
     },
+    {
+        type: "list",
+        name: "license",
+        message: "Please pick a license for your project: ",
+        choices: ["MIT", ""]
+    }
 ];
 
 // function to write README file

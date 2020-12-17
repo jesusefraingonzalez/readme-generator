@@ -65,7 +65,8 @@ function writeToFile(fileName, data) {
 // function to initialize program
 function init() {
     inq.prompt(questions)
-        .then(response => writeToFile('README.md', response));
+        .then(response => writeToFile('README.md', response))
+        .catch(error => { throw error });
 }
 
 // function call to initialize program

@@ -22,7 +22,7 @@ function generateMarkdown(data) {
   ${data.usage}
 
   ## License
-  This project is licensed under the [${data.license}](https://opensource.org/licenses/${data.license}) license.
+  This project is licensed under the ${data.license} license.
 
   ## Contributing
   ${data.contributing}

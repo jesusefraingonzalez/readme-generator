@@ -2,6 +2,11 @@
 const inq = require('inquirer');
 const fs = require('fs');
 const generateMarkdown = require('./generateMarkdown.js');
+const path = require('path');
+
+// create output file path
+const OUTPUT_DIR = path.resolve(__dirname, 'output');
+const outputPath = path.join(OUTPUT_DIR, 'README.md');
 
 // array of questions for user
 //title, description, installation, usage, license, contributing, tests, questions 
@@ -19,7 +24,7 @@ const questions = [
     {
         type: "input",
         name: "installation",
-        message: "Please enter installation instructions for your project: " 
+        message: "Please enter installation instructions for your project: "
     },
     {
         type: "input",
@@ -50,13 +55,17 @@ const questions = [
         type: "list",
         name: "license",
         message: "Please pick a license for your project: ",
-        choices: ["MIT", "Apache_2.0" , "GPL_3.0", "GPL_2.0" , "MPL_2.0", "EPL_2.0"]
+        choices: ["MIT", "Apache_2.0", "GPL_3.0", "GPL_2.0", "MPL_2.0", "EPL_2.0"]
     }
 ];
 
 // function to write README file
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, generateMarkdown(data), error => {
+        // create output path if it doesnt exist
+        fs.mkdir(OUTPUT_DIR, { recursive: true }, (err) => {
+            if (err) throw err;
+        });
         if (error) throw error;
         else console.log("Success!");
     })
@@ -65,7 +74,7 @@ function writeToFile(fileName, data) {
 // function to initialize program
 function init() {
     inq.prompt(questions)
-        .then(response => writeToFile('README.md', response))
+        .then(response => writeToFile(outputPath, response))
         .catch(error => { throw error });
 }
 
